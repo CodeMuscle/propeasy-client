@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en" class="mx-auto">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+    <link rel="icon" href="./assets/favicon.png" type="image/png" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./css/output.css" />
+
+    <!-- Icons - FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Custom Fonts - DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <title>PropEasy - Property Management</title>
+  </head>
+  <body className="overflow-hidden gap-12">
+    <!-- Navbar -->
+    <div class="lg:mb-20 mb-10 lg:max-w-[1440px] w-[90%] mx-auto">
+      <nav class="py-6 flex flex-row items-center justify-between">
+        <div class="max-w-[10rem] max-h-[4rem]">
+          <a href="/">
+            <img
+              src="./assets/logoFinal.png"
+              alt="logo"
+              width="141"
+              height="27"
+            />
+          </a>
+        </div>
+
+        <!-- <ul class="hidden md:flex md:flex-row gap-8 items-center">
+          <a
+            class="font-normal leading-[22px] text-base text-textTertiary hover:text-textSecondary duration-150 transition-colors"
+            href="/about"
+            >About</a
+          >
+          <a
+            class="flex flex-row items-center font-normal leading-[22px] text-base text-textTertiary hover:text-textSecondary duration-150 transition-colors"
+            href=""
+            >Pages</a
+          >
+          <i class="fa-solid fa-chevron-down"></i>
+          <a
+            class="font-normal leading-[22px] text-base text-textTertiary hover:text-textSecondary duration-150 transition-colors"
+            href="#search"
+            >Search</a
+          >
+          <a
+            class="font-normal leading-[22px] text-base text-textTertiary hover:text-textSecondary duration-150 transition-colors"
+            href="#testimonial"
+            >Testimonial</a
+          >
+        </ul> -->
+
+        <button class="bg-primary px-8 py-3 rounded-[16px] text-white">
+          <a href="Wa.me/+919589134844"> Contact Us </a>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="mb-20 lg:max-w-[1440px] w-[90%] mx-auto">
+      <div
+        class="hero_imgwrapper min-h-[70vh] w-full rounded-[50px] p-10 lg:p-20"
+      >
+        <div class="flex flex-col items-start justify-start gap-6">
+          <div class="lg:max-w-[30rem] flex flex-col gap-5">
+            <h1
+              class="mr-6 text-4xl lg:text-[48px] lg:leading-[63px] font-normal text-[#110229] drop-shadow-2xl"
+            >
+              India&apos;s biggest property database
+            </h1>
+            <p
+              class="font-light text-[#585981] text-xl lg:text-[22px] lg:leading-[36px]"
+            >
+              Fresh properties • Verified contacts • Leads management system •
+              Google Sheet integration
+            </p>
+            <div class="flex flex-row">
+              <button
+                class="flex flex-row gap-3 items-center bg-primary px-8 py-3 rounded-full text-white"
+              >
+                <a href="Wa.me/+919589134844"> Connect With Us </a>
+                <img src="./assets/arrow-white.png" alt="arrow-white" />
+              </button>
+              <!-- <button class="bg-primary p-2 px-5 rounded-full text-white">
+                  
+                </button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Featured Section -->
+    <div class="mb-20 lg:max-w-[1440px] w-[90%] mx-auto">
+      <div class="my-16 w-full flex flex-col items-center justify-center gap-8">
+        <h2 class="text-textSecondary font-semibold text-5xl">
+          Discover featured
+        </h2>
+
+        <div class="w-full flex flex-col items-center justify-center gap-8">
+          <div
+            class="flex lg:flex-row flex-col gap-8 items-center justify-center"
+          >
+            <div
+              class="flex flex-col gap-5 rounded-2xl bg-[#EFE6FD] p-10 lg:w-2/3"
+            >
+              <h3 class="text-xl font-bold text-[#121212]">Fresh Property</h3>
+              <p class="text-textTertiary text-lg font-light">
+                Stay ahead with the latest and most relevant property listings
+                and high-quality leads
+              </p>
+              <div class="flex items-center justify-end">
+                <img
+                  src="./assets/property-map.png"
+                  alt="property-map"
+                  className="object-fill"
+                />
+              </div>
+            </div>
+            <div
+              class="flex flex-col gap-5 rounded-2xl bg-[#F1F0F7] p-10 lg:w-1/3"
+            >
+              <h3 class="text-xl font-bold text-[#121212]">
+                Verified listings
+              </h3>
+              <p class="text-textTertiary text-lg font-light">
+                Stay ahead with the latest and most relevant property listings
+                and high-quality leads
+              </p>
+
+              <div class="flex items-center justify-end">
+                <img
+                  src="./assets/listings.png"
+                  alt="verified listings"
+                  className="rounded-2xl"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex lg:flex-row flex-col gap-8 items-center justify-center"
+          >
+            <div
+              class="flex flex-col gap-5 rounded-2xl bg-[#FDEEE6] p-10 lg:w-1/3"
+            >
+              <h3 class="text-xl font-bold text-[#121212]">
+                Exclusive Broker Offers
+              </h3>
+              <ul>
+                <li>
+                  <p class="text-textTertiary text-lg font-light">
+                    <span class="font-semibold">Priority Access:</span> Early
+                    access to new listings before they hit the general market.
+                  </p>
+                </li>
+                <li>
+                  <p class="text-textTertiary text-lg font-light">
+                    <span class="font-semibold"> Special Pricing: </span>
+                    Exclusive discounts or reduced rates on select properties
+                  </p>
+                </li>
+              </ul>
+              <div class="flex items-center justify-center">
+                <img
+                  src="./assets/offers.png"
+                  alt="offers"
+                  className="object-fill"
+                  width="210"
+                />
+              </div>
+            </div>
+            <div
+              class="flex flex-col gap-5 rounded-2xl bg-[#E6EEFD] p-10 lg:w-2/3"
+            >
+              <h3 class="text-xl font-bold text-[#121212]">
+                Exclusive Listings
+              </h3>
+              <p class="text-textTertiary text-lg font-light">
+                Stay ahead with the latest and most relevant property listings
+                and high-quality leads
+              </p>
+              <div class="h-full flex items-end justify-end">
+                <img
+                  src="./assets/listings2.png"
+                  alt="exclusive-listings"
+                  className="object-fill"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonial Section -->
+    <div
+      class="flex flex-col gap-16 items-center justify-center py-16 bg-tertiary"
+    >
+      <div class="flex flex-col gap-4 items-center justify-center text-center">
+        <h2 class="text-5xl font-semibold text-secondary">
+          What our partner agents think
+        </h2>
+        <p class="text-block font-normal text-lg">
+          Our agents get the best closure rates across all platforms
+        </p>
+      </div>
+
+      <div class="autoscroll-section flex flex-col gap-8 w-full">
+        <!-- Set 1 -->
+        <div class="logos">
+          <div class="flex flex-col gap-12">
+            <div class="flex flex-row gap-8">
+              <div class="logos-slide">
+                <div class="w-full flex flex-row gap-8">
+                  <div
+                    class="md:min-w-[30rem] min-w-[15rem] rounded-2xl bg-white flex flex-col gap-6 p-10"
+                  >
+                    <div
+                      class="flex flex-row gap-12 justify-between items-center"
+                    >
+                      <div
+                        class="flex flex-col md:flex-row md:gap-2 gap-4 items-center"
+                      >
+                        <div class="rounded-full bg-[#F6DE9D] p-1">
+                          <img
+                            src="./assets/aman.png"
+                            alt="aman"
+                            width="50"
+                            height="50"
+                          />
+                        </div>
+                        <div class="flex flex-col">
+                          <p class="font-semibold text-lg text-[#121212]">
+                            Aman Singh
+                          </p>
+                          <p class="text-normal text-md text-[#6A6A6A]">
+                            @amansingh
+                          </p>
+                        </div>
+                      </div>
+                      <img
+                        src="./assets/x-icon.png"
+                        alt="x"
+                        width="30"
+                        height="30"
+                        class="hidden md:block"
+                      />
+                    </div>
+                    <div class="description">
+                      <p
+                        class="text-sm md:text-lg font-normal text-[#6A6A6A] text-balance"
+                      >
+                        They took the time to understand our needs and guided us
+                        through every step of the process with clear
+                        communication and transparency
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="md:min-w-[30rem] min-w-[15rem] rounded-2xl bg-white flex flex-col gap-6 p-10"
+                  >
+                    <div
+                      class="flex flex-row gap-12 justify-between items-center"
+                    >
+                      <div
+                        class="flex flex-col md:flex-row md:gap-2 gap-4 items-center"
+                      >
+                        <div class="rounded-full bg-[#FABCA6] p-1">
+                          <img
+                            src="./assets/shreya.png"
+                            alt="aman"
+                            width="50"
+                            height="50"
+                          />
+                        </div>
+                        <div class="flex flex-col">
+                          <p class="font-semibold text-lg text-[#121212]">
+                            Shreya Kumari
+                          </p>
+                          <p class="text-normal text-md text-[#6A6A6A]">
+                            @shreya
+                          </p>
+                        </div>
+                      </div>
+                      <img
+                        src="./assets/x-icon.png"
+                        alt="x"
+                        width="30"
+                        height="30"
+                        class="hidden md:block"
+                      />
+                    </div>
+                    <div class="description">
+                      <p
+                        class="text-sm md:text-lg font-normal text-[#6A6A6A] text-balance"
+                      >
+                        They took the time to understand our needs and guided us
+                        through every step of the process with clear
+                        communication and transparency.'
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="md:min-w-[30rem] min-w-[15rem] rounded-2xl bg-white flex flex-col gap-6 p-10"
+                  >
+                    <div
+                      class="flex flex-row gap-12 justify-between items-center"
+                    >
+                      <div
+                        class="flex flex-col md:flex-row md:gap-2 gap-4 items-center"
+                      >
+                        <div class="rounded-full bg-[#E2E3E5] p-1">
+                          <img
+                            src="./assets/piyusha.png"
+                            alt="piyusha"
+                            width="50"
+                            height="50"
+                          />
+                        </div>
+                        <div class="flex flex-col">
+                          <p class="font-semibold text-lg text-[#121212]">
+                            Piyusha
+                          </p>
+                          <p class="text-normal text-md text-[#6A6A6A]">
+                            @piyusha
+                          </p>
+                        </div>
+                      </div>
+                      <img
+                        src="./assets/x-icon.png"
+                        alt="x"
+                        width="30"
+                        height="30"
+                        class="hidden md:block"
+                      />
+                    </div>
+                    <div class="description">
+                      <p
+                        class="text-sm md:text-lg font-normal text-[#6A6A6A] text-balance"
+                      >
+                        What impressed us most was their attention to detail and
+                        commitment to finding the perfect property that exceeded
+                        our expectations.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="md:min-w-[30rem] min-w-[15rem] rounded-2xl bg-white flex flex-col gap-6 p-10"
+                  >
+                    <div
+                      class="flex flex-row gap-12 justify-between items-center"
+                    >
+                      <div
+                        class="flex flex-col md:flex-row md:gap-2 gap-4 items-center"
+                      >
+                        <div class="rounded-full bg-[#ADA8D6] p-1">
+                          <img
+                            src="./assets/akash.png"
+                            alt="aman"
+                            width="50"
+                            height="50"
+                          />
+                        </div>
+                        <div class="flex flex-col">
+                          <p class="font-semibold text-lg text-[#121212]">
+                            Akash Kumar
+                          </p>
+                          <p class="text-normal text-md text-[#6A6A6A]">
+                            @akash
+                          </p>
+                        </div>
+                      </div>
+                      <img
+                        src="./assets/x-icon.png"
+                        alt="x"
+                        width="30"
+                        height="30"
+                        class="hidden md:block"
+                      />
+                    </div>
+                    <div class="description">
+                      <p
+                        class="text-sm md:text-lg font-normal text-[#6A6A6A] text-balance"
+                      >
+                        Working with Biggest Property has been a truly
+                        outstanding experience. Their commitment to quality and
+                        customer satisfaction is evident in every aspect of
+                        their service.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="logos-slide">
+                <div class="w-full flex flex-row gap-8">
+                  <div
+                    class="md:min-w-[30rem] min-w-[15rem] rounded-2xl bg-white flex flex-col gap-6 p-10"
+                  >
+                    <div
+                      class="flex flex-row gap-12 justify-between items-center"
+                    >
+                      <div
+                        class="flex flex-col md:flex-row md:gap-2 gap-4 items-center"
+                      >
+                        <div class="rounded-full bg-[#F6DE9D] p-1">
+                          <img
+                            src="./assets/aman.png"
+                            alt="aman"
+                            width="50"
+                            height="50"
+                          />
+                        </div>
+                        <div class="flex flex-col">
+                          <p class="font-semibold text-lg text-[#121212]">
+                            Aman Singh
+                          </p>
+                          <p class="text-normal text-md text-[#6A6A6A]">
+                            @amansingh
+                          </p>
+                        </div>
+                      </div>
+                      <img
+                        src="./assets/x-icon.png"
+                        alt="x"
+                        width="30"
+                        height="30"
+                        class="hidden md:block"
+                      />
+                    </div>
+                    <div class="description">
+                      <p
+                        class="text-sm md:text-lg font-normal text-[#6A6A6A] text-balance"
+                      >
+                        They took the time to understand our needs and guided us
+                        through every step of the process with clear
+                        communication and transparency
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="md:min-w-[30rem] min-w-[15rem] rounded-2xl bg-white flex flex-col gap-6 p-10"
+                  >
+                    <div
+                      class="flex flex-row gap-12 justify-between items-center"
+                    >
+                      <div
+                        class="flex flex-col md:flex-row md:gap-2 gap-4 items-center"
+                      >
+                        <div class="rounded-full bg-[#FABCA6] p-1">
+                          <img
+                            src="./assets/shreya.png"
+                            alt="aman"
+                            width="50"
+                            height="50"
+                          />
+                        </div>
+                        <div class="flex flex-col">
+                          <p class="font-semibold text-lg text-[#121212]">
+                            Shreya Kumari
+                          </p>
+                          <p class="text-normal text-md text-[#6A6A6A]">
+                            @shreya
+                          </p>
+                        </div>
+                      </div>
+                      <img
+                        src="./assets/x-icon.png"
+                        alt="x"
+                        width="30"
+                        height="30"
+                        class="hidden md:block"
+                      />
+                    </div>
+                    <div class="description">
+                      <p
+                        class="text-sm md:text-lg font-normal text-[#6A6A6A] text-balance"
+                      >
+                        They took the time to understand our needs and guided us
+                        through every step of the process with clear
+                        communication and transparency.'
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="md:min-w-[30rem] min-w-[15rem] rounded-2xl bg-white flex flex-col gap-6 p-10"
+                  >
+                    <div
+                      class="flex flex-row gap-12 justify-between items-center"
+                    >
+                      <div
+                        class="flex flex-col md:flex-row md:gap-2 gap-4 items-center"
+                      >
+                        <div class="rounded-full bg-[#E2E3E5] p-1">
+                          <img
+                            src="./assets/piyusha.png"
+                            alt="piyusha"
+                            width="50"
+                            height="50"
+                          />
+                        </div>
+                        <div class="flex flex-col">
+                          <p class="font-semibold text-lg text-[#121212]">
+                            Piyusha
+                          </p>
+                          <p class="text-normal text-md text-[#6A6A6A]">
+                            @piyusha
+                          </p>
+                        </div>
+                      </div>
+                      <img
+                        src="./assets/x-icon.png"
+                        alt="x"
+                        width="30"
+                        height="30"
+                        class="hidden md:block"
+                      />
+                    </div>
+                    <div class="description">
+                      <p
+                        class="text-sm md:text-lg font-normal text-[#6A6A6A] text-balance"
+                      >
+                        What impressed us most was their attention to detail and
+                        commitment to finding the perfect property that exceeded
+                        our expectations.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="md:min-w-[30rem] min-w-[15rem] rounded-2xl bg-white flex flex-col gap-6 p-10"
+                  >
+                    <div
+                      class="flex flex-row gap-12 justify-between items-center"
+                    >
+                      <div
+                        class="flex flex-col md:flex-row md:gap-2 gap-4 items-center"
+                      >
+                        <div class="rounded-full bg-[#ADA8D6] p-1">
+                          <img
+                            src="./assets/akash.png"
+                            alt="aman"
+                            width="50"
+                            height="50"
+                          />
+                        </div>
+                        <div class="flex flex-col">
+                          <p class="font-semibold text-lg text-[#121212]">
+                            Akash Kumar
+                          </p>
+                          <p class="text-normal text-md text-[#6A6A6A]">
+                            @akash
+                          </p>
+                        </div>
+                      </div>
+                      <img
+                        src="./assets/x-icon.png"
+                        alt="x"
+                        width="30"
+                        height="30"
+                        class="hidden md:block"
+                      />
+                    </div>
+                    <div class="description">
+                      <p
+                        class="text-sm md:text-lg font-normal text-[#6A6A6A] text-balance"
+                      >
+                        Working with Biggest Property has been a truly
+                        outstanding experience. Their commitment to quality and
+                        customer satisfaction is evident in every aspect of
+                        their service.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-row gap-8">
+              <div class="logos-slideReverse">
+                <div class="w-full flex flex-row gap-8">
+                  <div
+                    class="md:min-w-[30rem] min-w-[15rem] rounded-2xl bg-white flex flex-col gap-6 p-10"
+                  >
+                    <div
+                      class="flex flex-row gap-12 justify-between items-center"
+                    >
+                      <div
+                        class="flex flex-col md:flex-row md:gap-2 gap-4 items-center"
+                      >
+                        <div class="rounded-full bg-[#ABC5DE] p-1">
+                          <img
+                            src="./assets/aamir.png"
+                            alt="aman"
+                            width="50"
+                            height="50"
+                          />
+                        </div>
+                        <div class="flex flex-col">
+                          <p class="font-semibold text-lg text-[#121212]">
+                            Md. Aamir
+                          </p>
+                          <p class="text-normal text-md text-[#6A6A6A]">
+                            @aamiraktar
+                          </p>
+                        </div>
+                      </div>
+                      <img
+                        src="./assets/x-icon.png"
+                        alt="x"
+                        width="30"
+                        height="30"
+                        class="hidden md:block"
+                      />
+                    </div>
+                    <div class="description">
+                      <p
+                        class="text-sm md:text-lg font-normal text-[#6A6A6A] text-balance"
+                      >
+                        They took the time to understand our needs and guided us
+                        through every step of the process with clear
+                        communication and transparency.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="md:min-w-[30rem] min-w-[15rem] rounded-2xl bg-white flex flex-col gap-6 p-10"
+                  >
+                    <div
+                      class="flex flex-row gap-12 justify-between items-center"
+                    >
+                      <div
+                        class="flex flex-col md:flex-row md:gap-2 gap-4 items-center"
+                      >
+                        <div class="rounded-full bg-[#B4D1C4] p-1">
+                          <img
+                            src="./assets/ayush.png"
+                            alt="aman"
+                            width="50"
+                            height="50"
+                          />
+                        </div>
+                        <div class="flex flex-col">
+                          <p class="font-semibold text-lg text-[#121212]">
+                            Ayush Kumar
+                          </p>
+                          <p class="text-normal text-md text-[#6A6A6A]">
+                            @kayush
+                          </p>
+                        </div>
+                      </div>
+                      <img
+                        src="./assets/x-icon.png"
+                        alt="x"
+                        width="30"
+                        height="30"
+                        class="hidden md:block"
+                      />
+                    </div>
+                    <div class="description">
+                      <p
+                        class="text-sm md:text-lg font-normal text-[#6A6A6A] text-balance"
+                      >
+                        What impressed us most was their attention to detail and
+                        commitment to finding the perfect property that exceeded
+                        our expectations.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="md:min-w-[30rem] min-w-[15rem] rounded-2xl bg-white flex flex-col gap-6 p-10"
+                  >
+                    <div
+                      class="flex flex-row gap-12 justify-between items-center"
+                    >
+                      <div
+                        class="flex flex-col md:flex-row md:gap-2 gap-4 items-center"
+                      >
+                        <div class="rounded-full bg-[#E2E3E5] p-1">
+                          <img
+                            src="./assets/akansha.png"
+                            alt="aman"
+                            width="50"
+                            height="50"
+                          />
+                        </div>
+                        <div class="flex flex-col">
+                          <p class="font-semibold text-lg text-[#121212]">
+                            Akansha
+                          </p>
+                          <p class="text-normal text-md text-[#6A6A6A]">
+                            @akansha
+                          </p>
+                        </div>
+                      </div>
+                      <img
+                        src="./assets/x-icon.png"
+                        alt="x"
+                        width="30"
+                        height="30"
+                        class="hidden md:block"
+                      />
+                    </div>
+                    <div class="description">
+                      <p
+                        class="text-sm md:text-lg font-normal text-[#6A6A6A] text-balance"
+                      >
+                        Their team was responsive, professional, and supportive
+                        throughout the entire process, making our dream home a
+                        reality. I highly recommend Biggest Property to anyone
+                        seeking a hassle-free.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="md:min-w-[30rem] min-w-[15rem] rounded-2xl bg-white flex flex-col gap-6 p-10"
+                  >
+                    <div
+                      class="flex flex-row gap-12 justify-between items-center"
+                    >
+                      <div
+                        class="flex flex-col md:flex-row md:gap-2 gap-4 items-center"
+                      >
+                        <div class="rounded-full bg-[#F6DE9D] p-1">
+                          <img
+                            src="./assets/aman.png"
+                            alt="aman"
+                            width="50"
+                            height="50"
+                          />
+                        </div>
+                        <div class="flex flex-col">
+                          <p class="font-semibold text-lg text-[#121212]">
+                            Aman Singh
+                          </p>
+                          <p class="text-normal text-md text-[#6A6A6A]">
+                            @amansingh
+                          </p>
+                        </div>
+                      </div>
+                      <img
+                        src="./assets/x-icon.png"
+                        alt="x"
+                        width="30"
+                        height="30"
+                        class="hidden md:block"
+                      />
+                    </div>
+                    <div class="description">
+                      <p
+                        class="text-sm md:text-lg font-normal text-[#6A6A6A] text-balance"
+                      >
+                        They took the time to understand our needs and guided us
+                        through every step of the process with clear
+                        communication and transparency
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="logos-slideReverse">
+                <div class="w-full flex flex-row gap-8">
+                  <div
+                    class="md:min-w-[30rem] min-w-[15rem] rounded-2xl bg-white flex flex-col gap-6 p-10"
+                  >
+                    <div
+                      class="flex flex-row gap-12 justify-between items-center"
+                    >
+                      <div
+                        class="flex flex-col md:flex-row md:gap-2 gap-4 items-center"
+                      >
+                        <div class="rounded-full bg-[#ABC5DE] p-1">
+                          <img
+                            src="./assets/aamir.png"
+                            alt="aman"
+                            width="50"
+                            height="50"
+                          />
+                        </div>
+                        <div class="flex flex-col">
+                          <p class="font-semibold text-lg text-[#121212]">
+                            Md. Aamir
+                          </p>
+                          <p class="text-normal text-md text-[#6A6A6A]">
+                            @aamiraktar
+                          </p>
+                        </div>
+                      </div>
+                      <img
+                        src="./assets/x-icon.png"
+                        alt="x"
+                        width="30"
+                        height="30"
+                        class="hidden md:block"
+                      />
+                    </div>
+                    <div class="description">
+                      <p
+                        class="text-sm md:text-lg font-normal text-[#6A6A6A] text-balance"
+                      >
+                        They took the time to understand our needs and guided us
+                        through every step of the process with clear
+                        communication and transparency.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="md:min-w-[30rem] min-w-[15rem] rounded-2xl bg-white flex flex-col gap-6 p-10"
+                  >
+                    <div
+                      class="flex flex-row gap-12 justify-between items-center"
+                    >
+                      <div
+                        class="flex flex-col md:flex-row md:gap-2 gap-4 items-center"
+                      >
+                        <div class="rounded-full bg-[#B4D1C4] p-1">
+                          <img
+                            src="./assets/ayush.png"
+                            alt="aman"
+                            width="50"
+                            height="50"
+                          />
+                        </div>
+                        <div class="flex flex-col">
+                          <p class="font-semibold text-lg text-[#121212]">
+                            Ayush Kumar
+                          </p>
+                          <p class="text-normal text-md text-[#6A6A6A]">
+                            @kayush
+                          </p>
+                        </div>
+                      </div>
+                      <img
+                        src="./assets/x-icon.png"
+                        alt="x"
+                        width="30"
+                        height="30"
+                        class="hidden md:block"
+                      />
+                    </div>
+                    <div class="description">
+                      <p
+                        class="text-sm md:text-lg font-normal text-[#6A6A6A] text-balance"
+                      >
+                        What impressed us most was their attention to detail and
+                        commitment to finding the perfect property that exceeded
+                        our expectations.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="md:min-w-[30rem] min-w-[15rem] rounded-2xl bg-white flex flex-col gap-6 p-10"
+                  >
+                    <div
+                      class="flex flex-row gap-12 justify-between items-center"
+                    >
+                      <div
+                        class="flex flex-col md:flex-row md:gap-2 gap-4 items-center"
+                      >
+                        <div class="rounded-full bg-[#E2E3E5] p-1">
+                          <img
+                            src="./assets/akansha.png"
+                            alt="aman"
+                            width="50"
+                            height="50"
+                          />
+                        </div>
+                        <div class="flex flex-col">
+                          <p class="font-semibold text-lg text-[#121212]">
+                            Akansha
+                          </p>
+                          <p class="text-normal text-md text-[#6A6A6A]">
+                            @akansha
+                          </p>
+                        </div>
+                      </div>
+                      <img
+                        src="./assets/x-icon.png"
+                        alt="x"
+                        width="30"
+                        height="30"
+                        class="hidden md:block"
+                      />
+                    </div>
+                    <div class="description">
+                      <p
+                        class="text-sm md:text-lg font-normal text-[#6A6A6A] text-balance"
+                      >
+                        Their team was responsive, professional, and supportive
+                        throughout the entire process, making our dream home a
+                        reality. I highly recommend Biggest Property to anyone
+                        seeking a hassle-free.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="md:min-w-[30rem] min-w-[15rem] rounded-2xl bg-white flex flex-col gap-6 p-10"
+                  >
+                    <div
+                      class="flex flex-row gap-12 justify-between items-center"
+                    >
+                      <div
+                        class="flex flex-col md:flex-row md:gap-2 gap-4 items-center"
+                      >
+                        <div class="rounded-full bg-[#F6DE9D] p-1">
+                          <img
+                            src="./assets/aman.png"
+                            alt="aman"
+                            width="50"
+                            height="50"
+                          />
+                        </div>
+                        <div class="flex flex-col">
+                          <p class="font-semibold text-lg text-[#121212]">
+                            Aman Singh
+                          </p>
+                          <p class="text-normal text-md text-[#6A6A6A]">
+                            @amansingh
+                          </p>
+                        </div>
+                      </div>
+                      <img
+                        src="./assets/x-icon.png"
+                        alt="x"
+                        width="30"
+                        height="30"
+                        class="hidden md:block"
+                      />
+                    </div>
+                    <div class="description">
+                      <p
+                        class="text-sm md:text-lg font-normal text-[#6A6A6A] text-balance"
+                      >
+                        They took the time to understand our needs and guided us
+                        through every step of the process with clear
+                        communication and transparency
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rewards Section -->
+    <div class="my-20 lg:max-w-[1440px] w-[90%] mx-auto">
+      <div
+        class="w-full rounded-[50px] p-10 lg:p-20 bg-gradient-to-b from-[#C3DFED] to-[#DFF0F7] flex flex-col md:flex-row lg:items-center justify-between gap-6"
+      >
+        <div class="flex flex-col gap-6 items-start text-start lg:w-1/2">
+          <h2 class="text-[#110229] font-semibold text-5xl leading-[62px]">
+            Refer and get rewards
+          </h2>
+          <p class="text-[#6A6A6A]">
+            Expand your network and boost your earnings with our rewarding
+            referral program. Bring new brokers onto the platform and earn
+            incentives for every successful referral, helping you grow your
+            business and increase revenue.
+          </p>
+
+          <div class="flex flex-row">
+            <button
+              class="flex flex-row gap-3 items-center bg-primary px-8 py-3 rounded-full text-white"
+            >
+              <a href="Wa.me/+919589134844"> Connect With Us </a>
+              <img src="./assets/arrow-white.png" alt="arrow-white" />
+            </button>
+            <!-- <button class="bg-primary p-2 px-5 rounded-full text-white">
+                  
+                </button> -->
+          </div>
+        </div>
+
+        <div class="lg:w-1/2 flex lg:items-center lg:justify-center">
+          <img src="./assets/giftbox.png" alt="rewards" width="250" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-20">
+      <div
+        class="w-full bg-textSecondary pt-12 pb-4 lg:px-20 px-4 flex flex-col gap-8"
+      >
+        <div class="lg:max-w-[1440px] w-[90%] mx-auto flex flex-col gap-20">
+          <div
+            class="md:flex md:flex-row grid sm:grid-cols-2 grid-cols-1 gap-12 justify-between items-start"
+          >
+            <a href="/" class="">
+              <img src="./assets/logoDark.png" alt="" width="180" height="40" />
+            </a>
+            <!-- Timings -->
+            <div class="flex flex-col gap-6">
+              <p class="font-medium text-white lg:text-lg text-md">
+                Opening hours
+              </p>
+              <div class="flex flex-col gap-2">
+                <p class="font-light text-white lg:text-md text-sm">
+                  Mon-Fri 08:00AM - 08:00PM
+                </p>
+                <p class="font-light text-white lg:text-md text-sm">
+                  Sat-Sun 08:00AM - 08:00PM
+                </p>
+              </div>
+            </div>
+
+            <!-- Contact No -->
+            <div class="flex flex-col gap-6">
+              <p class="font-medium text-white lg:text-lg text-md">
+                Let&apos;s Connect
+              </p>
+              <div class="flex flex-col gap-2">
+                <p class="font-light text-white lg:text-md text-sm">
+                  +91 95891 34844
+                </p>
+              </div>
+            </div>
+
+            <!-- Reach Us -->
+            <div class="flex flex-col gap-6">
+              <p class="font-medium text-white lg:text-lg text-md">Find Us</p>
+              <div class="flex flex-col gap-2">
+                <p
+                  class="font-light text-white lg:text-md text-sm lg:max-w-[10rem]"
+                >
+                  BMTC Complex, Old Madiwala, Kuvempu Nagar, Stage 2, BTM
+                  Layout, Bengaluru, Karnataka 560068, India
+                </p>
+                <!-- <p class="font-light text-white lg:text-md text-sm">
+                  (566) 237-4687
+                </p> -->
+                <a
+                  href="mailto:contact@propeasy.homes"
+                  class="font-light text-white lg:text-md text-sm"
+                >
+                  contact@propeasy.homes
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center text-center">
+            <div class="w-full h-[1px] bg-[#FFFFFF] opacity-30 mb-6"></div>
+            <p class="font-light text-white lg:text-md text-sm">
+              © Copyright Emortech Systems Pvt. Ltd.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

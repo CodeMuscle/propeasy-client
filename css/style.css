@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
+  /* width: 100%; */
+}
+
+/* @media screen and (min-width: 1280px) {
+  html {
+    max-width: 1440px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  html {
+    max-width: 1280px;
+  }
+} */
+
+.hero_imgwrapper {
+  background-image: url("../assets/heroImage.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* opacity: 0.6; */
+  /* filter: alpha(opacity=60); */
+}
+
+.logos {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+@media screen and (min-width: 768px) {
+  .logos:before,
+  .logos:after {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+  }
+}
+
+.logos:before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+}
+.logos:after {
+  right: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+}
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes reverseslide {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.logos:hover > .logos-slide,
+.logos-slideReverse {
+  animation-play-state: paused;
+}
+
+.logos-slide {
+  display: inline-block;
+  animation: 30s slide infinite linear;
+}
+.logos-slideReverse {
+  display: inline-block;
+  animation: 30s reverseslide infinite linear;
+}
