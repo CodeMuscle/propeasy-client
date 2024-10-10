@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+    href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+    <link rel="icon" href="./assets/favicon.png" type="image/png" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./css/output.css" />
+
+    <!-- Icons - FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Custom Fonts - DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <title>WhatsApp OTP Authentication</title>
+  </head>
+  <body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white shadow-md rounded-lg p-8 w-full max-w-md">
+      <h2 class="text-2xl font-bold text-center mb-6">
+        WhatsApp Login
+      </h2>
+
+      <div id="otp-section">
+        <input
+          type="text"
+          id="phoneNumber"
+          placeholder="Enter your phone number"
+          class="border border-gray-300 rounded-md p-2 w-full mb-4"
+        />
+        <input
+          type="text"
+          id="userName"
+          placeholder="Enter your name"
+          class="border border-gray-300 rounded-md p-2 w-full mb-4"
+        />
+        <input
+          type="button"
+          id="sendOtpBtn"
+          value="Send OTP"
+          class="bg-blue-500 text-white rounded-md p-2 w-full cursor-pointer hover:bg-blue-600 transition duration-200"
+        />
+      </div>
+
+      <div id="verification-section" style="display: none">
+        <input
+          type="text"
+          id="enteredOtp"
+          placeholder="Enter the OTP"
+          class="border border-gray-300 rounded-md p-2 w-full mb-4"
+        />
+        <input
+          type="button"
+          id="verifyOtpBtn"
+          value="Verify OTP"
+          class="bg-green-500 text-white rounded-md p-2 w-full cursor-pointer hover:bg-green-600 transition duration-200"
+        />
+      </div>
+
+      <div class="message mt-4 text-center text-sm" id="message"></div>
+    </div>
+
+    <script>
+      const messageDiv = document.getElementById("message");
+
+      // Function to send OTP
+      document
+        .getElementById("sendOtpBtn")
+        .addEventListener("click", function () {
+          const phoneNumber = document.getElementById("phoneNumber").value;
+          const userName = document.getElementById("userName").value;
+
+          if (!phoneNumber || !userName) {
+            showMessage("Please enter your phone number and name.", "red");
+            return;
+          }
+
+          showMessage("Sending OTP...", "blue");
+
+          fetch("/v2/send-otp", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ phoneNumber, userName }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              showMessage(data.message, "green");
+              document.getElementById("otp-section").style.display = "none";
+              document.getElementById("verification-section").style.display =
+                "block";
+            })
+            .catch((error) => {
+              showMessage("Failed to send OTP: " + error.message, "red");
+            });
+        });
+
+      // Function to verify OTP
+      document
+        .getElementById("verifyOtpBtn")
+        .addEventListener("click", function () {
+          const phoneNumber = document.getElementById("phoneNumber").value;
+          const enteredOtp = document.getElementById("enteredOtp").value;
+
+          if (!enteredOtp) {
+            showMessage("Please enter the OTP.", "red");
+            return;
+          }
+
+          showMessage("Verifying OTP...", "blue");
+
+          fetch("/v2/verify-otp", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ phoneNumber, enteredOtp }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              showMessage(data.message, data.success ? "green" : "red");
+              if (data.success) {
+                window.location.href = data.nextPage || "/"; // Redirect on success
+              }
+            })
+            .catch((error) => {
+              showMessage("Failed to verify OTP: " + error.message, "red");
+            });
+        });
+
+      function showMessage(message, color) {
+        messageDiv.textContent = message;
+        messageDiv.style.color = color;
+      }
+    </script>
+  </body>
+</html>
