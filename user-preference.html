@@ -1,155 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User Preferences</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
     <style>
-        .slider-container {
-            position: relative;
-            width: 100%;
-            height: 6px;
-            background: #e4e4e4;
-            border-radius: 5px;
-            margin: 20px 0;
-        }
-        .slider {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 100%;
-            height: 6px;
-            background: transparent;
-            position: absolute;
-            pointer-events: none; /* Prevent pointer events on the track */
-        }
-        .slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 20px;
-            height: 20px;
-            background: #4A90E2;
-            border-radius: 50%;
-            cursor: pointer;
-            pointer-events: all; /* Allow pointer events on the thumb */
-        }
-        .slider::-moz-range-thumb {
-            width: 20px;
-            height: 20px;
-            background: #4A90E2;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-        .value-label {
-            position: absolute;
-            font-size: 14px;
-            color: #333;
-        }
-        .min-value {
-            left: 0%;
-        }
-        .max-value {
-            right: 0%;
-        }
+      .slider-container {
+        position: relative;
+        width: 100%;
+        height: 6px;
+        background: #e4e4e4;
+        border-radius: 5px;
+        margin: 20px 0;
+      }
+      .slider {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        height: 6px;
+        background: transparent;
+        position: absolute;
+        pointer-events: none; /* Prevent pointer events on the track */
+      }
+      .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        background: #4a90e2;
+        border-radius: 50%;
+        cursor: pointer;
+        pointer-events: all; /* Allow pointer events on the thumb */
+      }
+      .slider::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+        background: #4a90e2;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      .value-label {
+        position: absolute;
+        font-size: 14px;
+        color: #333;
+      }
+      .min-value {
+        left: 0%;
+      }
+      .max-value {
+        right: 0%;
+      }
     </style>
-</head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+  </head>
+  <body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white shadow-md rounded-lg p-8 w-full max-w-lg">
+      <h2 class="text-2xl font-bold text-center mb-6">User Preferences</h2>
 
-<div class="bg-white shadow-md rounded-lg p-8 w-full max-w-lg">
-    <h2 class="text-2xl font-bold text-center mb-6">User Preferences</h2>
-    
-    <form id="preferences-form">
+      <form id="preferences-form">
         <!-- Rent Range Slider -->
         <div class="mb-12">
-            <label class="block text-sm font-medium text-gray-700">Rent (in INR)</label>
-            <div class="slider-container">
-                <input type="range" id="minRent" class="slider" min="0" max="100000" value="0" step="100" />
-                <input type="range" id="maxRent" class="slider" min="0" max="100000" value="100000" step="100" />
-                <div class="value-label min-value mt-4" id="minValueLabel">₹20000</div>
-                <div class="value-label max-value mt-4" id="maxValueLabel">₹80000</div>
+          <label class="block text-sm font-medium text-gray-700"
+            >Rent (in INR)</label
+          >
+          <div class="slider-container">
+            <input
+              type="range"
+              id="minRent"
+              class="slider"
+              min="0"
+              max="100000"
+              value="0"
+              step="100"
+            />
+            <input
+              type="range"
+              id="maxRent"
+              class="slider"
+              min="0"
+              max="100000"
+              value="100000"
+              step="100"
+            />
+            <div class="value-label min-value mt-6" id="minValueLabel">
+              ₹20000
             </div>
+            <div class="value-label max-value mt-6" id="maxValueLabel">
+              ₹80000
+            </div>
+          </div>
         </div>
 
         <!-- Preferred Areas -->
+        <!-- Preferred Areas -->
         <div class="mb-4">
-            <label for="preferredAreas" class="block text-sm font-medium text-gray-700">Preferred Areas</label>
-            <select id="preferredAreas" multiple class="border border-gray-300 rounded-md p-2 w-full">
-                <option value="Maharashtra">Maharashtra</option>
-                <option value="Karnataka">Karnataka</option>
-                <option value="Delhi">Delhi</option>
-                <option value="Tamil Nadu">Tamil Nadu</option>
-                <option value="West Bengal">West Bengal</option>
-                <!-- Add more states as needed -->
-            </select>
+          <label
+            for="preferredAreas"
+            class="block text-sm font-medium text-gray-700"
+            >Preferred Areas</label
+          >
+          <select
+            id="preferredAreas"
+            multiple
+            class="border border-gray-300 rounded-md p-2 w-full"
+          >
+            <!-- Options will be populated here -->
+          </select>
         </div>
 
         <!-- Preferred Capacity -->
         <div class="mb-4">
-            <label for="capacity" class="block text-sm font-medium text-gray-700">Preferred Capacity</label>
-            <select id="capacity" class="border border-gray-300 rounded-md p-2 w-full">
-                <option value="">Select Capacity</option>
-                <option value="Room">Room</option>
-                <option value="Studio">Studio</option>
-                <option value="1BHK">1BHK</option>
-                <option value="2BHK">2BHK</option>
-                <option value="3BHK">3BHK</option>
-                <option value="Penthouse">Penthouse</option>
-            </select>
+          <label for="capacity" class="block text-sm font-medium text-gray-700"
+            >Preferred Capacity</label
+          >
+          <select
+            id="capacity"
+            class="border border-gray-300 rounded-md p-2 w-full"
+          >
+            <option value="">Select Capacity</option>
+            <option value="Room">Room</option>
+            <option value="Studio">Studio</option>
+            <option value="1BHK">1BHK</option>
+            <option value="2BHK">2BHK</option>
+            <option value="3BHK">3BHK</option>
+            <option value="Penthouse">Penthouse</option>
+          </select>
         </div>
 
         <!-- Additional Preferences -->
         <div class="mb-4">
-            <label for="amenities" class="block text-sm font-medium text-gray-700">Preferred Amenities</label>
-            <input type="text" id="amenities" placeholder="e.g., Parking, Gym, Pool" class="border border-gray-300 rounded-md p-2 w-full" />
+          <label for="amenities" class="block text-sm font-medium text-gray-700"
+            >Preferred Amenities</label
+          >
+          <input
+            type="text"
+            id="amenities"
+            placeholder="e.g., Parking, Gym, Pool"
+            class="border border-gray-300 rounded-md p-2 w-full"
+          />
         </div>
 
         <!-- Submit Button -->
-        <button type="submit" class="bg-blue-500 text-white rounded-md p-2 w-full hover:bg-blue-600 transition duration-200">Save Preferences</button>
-    </form>
+        <button
+          type="submit"
+          class="bg-blue-500 text-white rounded-md p-2 w-full hover:bg-blue-600 transition duration-200"
+        >
+          Save Preferences
+        </button>
+      </form>
 
-    <!-- Message Display -->
-    <div class="message mt-4 text-center text-sm" id="message"></div>
-</div>
+      <!-- Message Display -->
+      <div class="message mt-4 text-center text-sm" id="message"></div>
+    </div>
 
-<script>
-// Handle form submission
-document.getElementById('preferences-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent default form submission
+    <script>
+      // Fetch area data from JSON file
+      fetch("areas.json")
+        .then((response) => response.json())
+        .then((data) => {
+          const preferredAreasSelect =
+            document.getElementById("preferredAreas");
 
-    const minRent = document.getElementById('minRent').value;
-    const maxRent = document.getElementById('maxRent').value;
+          // Populate select options
+          data.areas.forEach((area) => {
+            const option = document.createElement("option");
+            option.value = area;
+            option.textContent = area;
+            preferredAreasSelect.appendChild(option);
+          });
+        })
+        .catch((error) => console.error("Error fetching area data:", error));
 
-    // Display message (You can replace this with an actual API call)
-    const messageDiv = document.getElementById('message');
-    messageDiv.textContent = 'Preferences saved successfully!';
-    messageDiv.style.color = 'green';
+      // Handle form submission
+      document
+        .getElementById("preferences-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent default form submission
 
-    // Here, you can send the data to your server using fetch or another method
-    console.log({ minRent, maxRent });
-});
+          const minRent = document.getElementById("minRent").value;
+          const maxRent = document.getElementById("maxRent").value;
 
-// Update labels based on slider values
-const minRentSlider = document.getElementById('minRent');
-const maxRentSlider = document.getElementById('maxRent');
-const minValueLabel = document.getElementById('minValueLabel');
-const maxValueLabel = document.getElementById('maxValueLabel');
+          // Display message (You can replace this with an actual API call)
+          const messageDiv = document.getElementById("message");
+          messageDiv.textContent = "Preferences saved successfully!";
+          messageDiv.style.color = "green";
 
-function updateLabels() {
-    minValueLabel.textContent = '₹' + minRentSlider.value;
-    maxValueLabel.textContent = '₹' + maxRentSlider.value;
+          // Here, you can send the data to your server using fetch or another method
+          console.log({ minRent, maxRent });
+        });
 
-    // Prevent overlapping sliders
-    if (parseInt(minRentSlider.value) > parseInt(maxRentSlider.value)) {
-        minRentSlider.value = maxRentSlider.value; // Adjust min if it exceeds max
-    }
-}
+      // Update labels based on slider values
+      const minRentSlider = document.getElementById("minRent");
+      const maxRentSlider = document.getElementById("maxRent");
+      const minValueLabel = document.getElementById("minValueLabel");
+      const maxValueLabel = document.getElementById("maxValueLabel");
 
-minRentSlider.addEventListener('input', updateLabels);
-maxRentSlider.addEventListener('input', updateLabels);
+      function updateLabels() {
+        minValueLabel.textContent = "₹" + minRentSlider.value;
+        maxValueLabel.textContent = "₹" + maxRentSlider.value;
 
-// Initialize labels on page load
-updateLabels();
-</script>
+        // Prevent overlapping sliders
+        if (parseInt(minRentSlider.value) > parseInt(maxRentSlider.value)) {
+          minRentSlider.value = maxRentSlider.value; // Adjust min if it exceeds max
+        }
+      }
 
-</body>
+      minRentSlider.addEventListener("input", updateLabels);
+      maxRentSlider.addEventListener("input", updateLabels);
+
+      // Initialize labels on page load
+      updateLabels();
+    </script>
+  </body>
 </html>
