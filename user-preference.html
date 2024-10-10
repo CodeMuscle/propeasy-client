@@ -83,47 +83,44 @@
   </head>
   <body class="bg-gray-100 flex flex-col items-center justify-center w-full">
     <!-- Navbar -->
-    <div class="mb-10 lg:max-w-[1440px] w-[90%] mx-auto ">
-      <nav class="py-6 flex flex-row items-center justify-between">
-        <div class="max-w-[10rem] max-h-[4rem]">
-          <a href="/">
-            <img
-              src="./assets/logoFinal.png"
-              alt="logo"
-              width="141"
-              height="27"
-            />
-          </a>
-        </div>
+    <div class="w-full bg-textSecondary">
+      <div class="lg:max-w-[1440px] w-[90%] mx-auto">
+        <nav class="py-6 flex flex-row items-center justify-between">
+          <div class="max-w-[10rem] max-h-[4rem]">
+            <a href="/" class="">
+              <img src="./assets/logoDark.png" alt="" width="180" height="40" />
+            </a>
+          </div>
 
-        <!-- <ul class="hidden md:flex md:flex-row gap-8 items-center">
-              <a
-                class="font-normal leading-[22px] text-base text-textTertiary hover:text-textSecondary duration-150 transition-colors"
-                href="/about"
-                >About</a
-              >
-              <a
-                class="flex flex-row items-center font-normal leading-[22px] text-base text-textTertiary hover:text-textSecondary duration-150 transition-colors"
-                href=""
-                >Pages</a
-              >
-              <i class="fa-solid fa-chevron-down"></i>
-              <a
-                class="font-normal leading-[22px] text-base text-textTertiary hover:text-textSecondary duration-150 transition-colors"
-                href="#search"
-                >Search</a
-              >
-              <a
-                class="font-normal leading-[22px] text-base text-textTertiary hover:text-textSecondary duration-150 transition-colors"
-                href="#testimonial"
-                >Testimonial</a
-              >
-            </ul> -->
+          <!-- <ul class="hidden md:flex md:flex-row gap-8 items-center">
+                <a
+                  class="font-normal leading-[22px] text-base text-textTertiary hover:text-textSecondary duration-150 transition-colors"
+                  href="/about"
+                  >About</a
+                >
+                <a
+                  class="flex flex-row items-center font-normal leading-[22px] text-base text-textTertiary hover:text-textSecondary duration-150 transition-colors"
+                  href=""
+                  >Pages</a
+                >
+                <i class="fa-solid fa-chevron-down"></i>
+                <a
+                  class="font-normal leading-[22px] text-base text-textTertiary hover:text-textSecondary duration-150 transition-colors"
+                  href="#search"
+                  >Search</a
+                >
+                <a
+                  class="font-normal leading-[22px] text-base text-textTertiary hover:text-textSecondary duration-150 transition-colors"
+                  href="#testimonial"
+                  >Testimonial</a
+                >
+              </ul> -->
 
-        <button class="bg-primary px-8 py-3 rounded-[16px] text-white">
-          <a href="Wa.me/+919589134844"> Contact Us </a>
-        </button>
-      </nav>
+          <button class="bg-white px-8 py-3 rounded-[16px] text-primary">
+            <a href="Wa.me/+919589134844"> Contact Us </a>
+          </button>
+        </nav>
+      </div>
     </div>
 
     <!-- User Preference Panel -->
@@ -155,17 +152,37 @@
               value="100000"
               step="100"
             />
-            <div class="value-label min-value mt-6" id="minValueLabel">
-              ₹20000
-            </div>
+            <div class="value-label min-value mt-6" id="minValueLabel">₹0</div>
             <div class="value-label max-value mt-6" id="maxValueLabel">
-              ₹80000
+              ₹100000
             </div>
           </div>
         </div>
 
-        <!-- Preferred Areas -->
-        <!-- Preferred Areas -->
+        <!-- Cities Dropdown -->
+        <div class="mb-4">
+          <label for="cities" class="block text-sm font-medium text-gray-700"
+            >Cities</label
+          >
+          <select
+            id="cities"
+            class="border border-gray-300 rounded-md p-2 w-full"
+          >
+            <option value="">Select City</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Pune">Pune</option>
+            <option value="Ahmedabad">Ahmedabad</option>
+            <option value="Jaipur">Jaipur</option>
+            <option value="Lucknow">Lucknow</option>
+          </select>
+        </div>
+
+        <!-- Preferred Areas Dropdown -->
         <div class="mb-4">
           <label
             for="preferredAreas"
@@ -181,36 +198,37 @@
           </select>
         </div>
 
-        <!-- Preferred Capacity -->
+        <!-- Preferred Capacity Checkbox -->
         <div class="mb-4">
-          <label for="capacity" class="block text-sm font-medium text-gray-700"
+          <label class="block text-sm font-medium text-gray-700"
             >Preferred Capacity</label
           >
-          <select
-            id="capacity"
-            class="border border-gray-300 rounded-md p-2 w-full"
-          >
-            <option value="">Select Capacity</option>
-            <option value="Room">Room</option>
-            <option value="Studio">Studio</option>
-            <option value="1BHK">1BHK</option>
-            <option value="2BHK">2BHK</option>
-            <option value="3BHK">3BHK</option>
-            <option value="Penthouse">Penthouse</option>
-          </select>
-        </div>
-
-        <!-- Additional Preferences -->
-        <div class="mb-4">
-          <label for="amenities" class="block text-sm font-medium text-gray-700"
-            >Preferred Amenities</label
-          >
-          <input
-            type="text"
-            id="amenities"
-            placeholder="e.g., Parking, Gym, Pool"
-            class="border border-gray-300 rounded-md p-2 w-full"
-          />
+          <div class="flex flex-col gap-2">
+            <label
+              ><input type="checkbox" name="capacity" value="Room" />
+              Room</label
+            >
+            <label
+              ><input type="checkbox" name="capacity" value="Studio" />
+              Studio</label
+            >
+            <label
+              ><input type="checkbox" name="capacity" value="1BHK" />
+              1BHK</label
+            >
+            <label
+              ><input type="checkbox" name="capacity" value="2BHK" />
+              2BHK</label
+            >
+            <label
+              ><input type="checkbox" name="capacity" value="3BHK" />
+              3BHK</label
+            >
+            <label
+              ><input type="checkbox" name="capacity" value="Penthouse" />
+              Penthouse</label
+            >
+          </div>
         </div>
 
         <!-- Submit Button -->
