@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-    href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-    rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
     />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -34,11 +34,54 @@
     />
     <title>WhatsApp OTP Authentication</title>
   </head>
-  <body class="bg-gray-100 flex items-center justify-center min-h-screen">
-    <div class="bg-white shadow-md rounded-lg p-8 w-full max-w-md">
-      <h2 class="text-2xl font-bold text-center mb-6">
-        WhatsApp Login
-      </h2>
+  <body class="bg-gray-100 flex flex-col w-full h-full items-center justify-center">
+    <!-- Navbar -->
+    <div class="lg:mb-20 mb-10 lg:max-w-[1440px] w-[90%] mx-auto">
+      <nav class="py-6 flex flex-row items-center justify-between">
+        <div class="max-w-[10rem] max-h-[4rem]">
+          <a href="/">
+            <img
+              src="./assets/logoFinal.png"
+              alt="logo"
+              width="141"
+              height="27"
+            />
+          </a>
+        </div>
+
+        <!-- <ul class="hidden md:flex md:flex-row gap-8 items-center">
+          <a
+            class="font-normal leading-[22px] text-base text-textTertiary hover:text-textSecondary duration-150 transition-colors"
+            href="/about"
+            >About</a
+          >
+          <a
+            class="flex flex-row items-center font-normal leading-[22px] text-base text-textTertiary hover:text-textSecondary duration-150 transition-colors"
+            href=""
+            >Pages</a
+          >
+          <i class="fa-solid fa-chevron-down"></i>
+          <a
+            class="font-normal leading-[22px] text-base text-textTertiary hover:text-textSecondary duration-150 transition-colors"
+            href="#search"
+            >Search</a
+          >
+          <a
+            class="font-normal leading-[22px] text-base text-textTertiary hover:text-textSecondary duration-150 transition-colors"
+            href="#testimonial"
+            >Testimonial</a
+          >
+        </ul> -->
+
+        <button class="bg-primary px-8 py-3 rounded-[16px] text-white">
+          <a href="Wa.me/+919589134844"> Contact Us </a>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Login Panel -->
+    <div class="bg-white shadow-md rounded-lg p-8 my-12 w-full max-w-md">
+      <h2 class="text-2xl font-bold text-center mb-6">WhatsApp Login</h2>
 
       <div id="otp-section">
         <input
@@ -78,6 +121,79 @@
 
       <div class="message mt-4 text-center text-sm" id="message"></div>
     </div>
+
+    <!-- Footer -->
+    <footer class="mt-20 w-full">
+      <div
+        class="w-full bg-textSecondary pt-12 pb-4 lg:px-20 px-4 flex flex-col gap-8"
+      >
+        <div class="lg:max-w-[1440px] w-[90%] mx-auto flex flex-col gap-20">
+          <div
+            class="md:flex md:flex-row grid sm:grid-cols-2 grid-cols-1 gap-12 justify-between items-start"
+          >
+            <a href="/" class="">
+              <img src="./assets/logoDark.png" alt="" width="180" height="40" />
+            </a>
+            <!-- Timings -->
+            <div class="flex flex-col gap-6">
+              <p class="font-medium text-white lg:text-lg text-md">
+                Opening hours
+              </p>
+              <div class="flex flex-col gap-2">
+                <p class="font-light text-white lg:text-md text-sm">
+                  Mon-Fri 08:00AM - 08:00PM
+                </p>
+                <p class="font-light text-white lg:text-md text-sm">
+                  Sat-Sun 08:00AM - 08:00PM
+                </p>
+              </div>
+            </div>
+
+            <!-- Contact No -->
+            <div class="flex flex-col gap-6">
+              <p class="font-medium text-white lg:text-lg text-md">
+                Let&apos;s Connect
+              </p>
+              <div class="flex flex-col gap-2">
+                <p class="font-light text-white lg:text-md text-sm">
+                  +91 95891 34844
+                </p>
+              </div>
+            </div>
+
+            <!-- Reach Us -->
+            <div class="flex flex-col gap-6">
+              <p class="font-medium text-white lg:text-lg text-md">Find Us</p>
+              <div class="flex flex-col gap-2">
+                <p
+                  class="font-light text-white lg:text-md text-sm lg:max-w-[10rem]"
+                >
+                  BMTC Complex, Old Madiwala, Kuvempu Nagar, Stage 2, BTM
+                  Layout, Bengaluru, Karnataka 560068, India
+                </p>
+                <!-- <p class="font-light text-white lg:text-md text-sm">
+                  (566) 237-4687
+                </p> -->
+                <a
+                  href="mailto:contact@propeasy.homes"
+                  class="font-light text-white lg:text-md text-sm"
+                >
+                  contact@propeasy.homes
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center text-center">
+            <div class="w-full h-[1px] bg-[#FFFFFF] opacity-30 mb-6"></div>
+            <p class="font-light text-white lg:text-md text-sm">
+              © Copyright Emortech Systems Pvt. Ltd.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
 
     <script>
       const messageDiv = document.getElementById("message");
