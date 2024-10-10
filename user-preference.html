@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>User Preferences</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
@@ -32,7 +33,6 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
       rel="stylesheet"
     />
-    <title>User Preferences</title>
     <style>
       .slider-container {
         position: relative;
@@ -79,6 +79,21 @@
       .max-value {
         right: 0%;
       }
+      .dropdown {
+        position: relative;
+      }
+      .dropdown-content {
+        display: none; /* Hidden by default */
+        position: absolute;
+        background-color: white;
+        min-width: 200px; /* Set a minimum width */
+        border-radius: 0.375rem; /* Tailwind Rounded-md */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1; /* Ensure it appears above other elements */
+      }
+      .dropdown:hover .dropdown-content {
+        display: block; /* Show the dropdown on hover */
+      }
     </style>
   </head>
   <body class="bg-gray-100 flex flex-col items-center justify-center w-full">
@@ -93,28 +108,28 @@
           </div>
 
           <!-- <ul class="hidden md:flex md:flex-row gap-8 items-center">
-                <a
-                  class="font-normal leading-[22px] text-base text-textTertiary hover:text-textSecondary duration-150 transition-colors"
-                  href="/about"
-                  >About</a
-                >
-                <a
-                  class="flex flex-row items-center font-normal leading-[22px] text-base text-textTertiary hover:text-textSecondary duration-150 transition-colors"
-                  href=""
-                  >Pages</a
-                >
-                <i class="fa-solid fa-chevron-down"></i>
-                <a
-                  class="font-normal leading-[22px] text-base text-textTertiary hover:text-textSecondary duration-150 transition-colors"
-                  href="#search"
-                  >Search</a
-                >
-                <a
-                  class="font-normal leading-[22px] text-base text-textTertiary hover:text-textSecondary duration-150 transition-colors"
-                  href="#testimonial"
-                  >Testimonial</a
-                >
-              </ul> -->
+                  <a
+                    class="font-normal leading-[22px] text-base text-textTertiary hover:text-textSecondary duration-150 transition-colors"
+                    href="/about"
+                    >About</a
+                  >
+                  <a
+                    class="flex flex-row items-center font-normal leading-[22px] text-base text-textTertiary hover:text-textSecondary duration-150 transition-colors"
+                    href=""
+                    >Pages</a
+                  >
+                  <i class="fa-solid fa-chevron-down"></i>
+                  <a
+                    class="font-normal leading-[22px] text-base text-textTertiary hover:text-textSecondary duration-150 transition-colors"
+                    href="#search"
+                    >Search</a
+                  >
+                  <a
+                    class="font-normal leading-[22px] text-base text-textTertiary hover:text-textSecondary duration-150 transition-colors"
+                    href="#testimonial"
+                    >Testimonial</a
+                  >
+                </ul> -->
 
           <button class="bg-white px-8 py-3 rounded-[16px] text-primary">
             <a href="Wa.me/+919589134844"> Contact Us </a>
@@ -182,52 +197,41 @@
           </select>
         </div>
 
-        <!-- Preferred Areas Dropdown -->
-        <div class="mb-4">
-          <label
-            for="preferredAreas"
-            class="block text-sm font-medium text-gray-700"
+        <!-- Preferred Areas Dropdown with Checkboxes -->
+        <div class="mb-4 dropdown">
+          <label class="block text-sm font-medium text-gray-700"
             >Preferred Areas</label
           >
-          <select
-            id="preferredAreas"
-            multiple
-            class="border border-gray-300 rounded-md p-2 w-full"
+          <div
+            id="preferredAreasDropdown"
+            class="border border-gray-300 rounded-md p-2 w-full cursor-pointer"
+          >
+            Select Areas
+          </div>
+          <div
+            id="preferredAreasContent"
+            class="dropdown-content p-2 border border-gray-300 rounded-md w-full"
           >
             <!-- Options will be populated here -->
-          </select>
+          </div>
         </div>
 
-        <!-- Preferred Capacity Checkbox -->
-        <div class="mb-4">
+        <!-- Preferred Capacity Dropdown with Checkboxes -->
+        <div class="mb-4 dropdown">
           <label class="block text-sm font-medium text-gray-700"
             >Preferred Capacity</label
           >
-          <div class="flex flex-col gap-2">
-            <label
-              ><input type="checkbox" name="capacity" value="Room" />
-              Room</label
-            >
-            <label
-              ><input type="checkbox" name="capacity" value="Studio" />
-              Studio</label
-            >
-            <label
-              ><input type="checkbox" name="capacity" value="1BHK" />
-              1BHK</label
-            >
-            <label
-              ><input type="checkbox" name="capacity" value="2BHK" />
-              2BHK</label
-            >
-            <label
-              ><input type="checkbox" name="capacity" value="3BHK" />
-              3BHK</label
-            >
-            <label
-              ><input type="checkbox" name="capacity" value="Penthouse" />
-              Penthouse</label
-            >
+          <div
+            id="capacityDropdown"
+            class="border border-gray-300 rounded-md p-2 w-full cursor-pointer"
+          >
+            Select Capacity
+          </div>
+          <div
+            id="capacityContent"
+            class="dropdown-content p-2 border border-gray-300 rounded-md w-full"
+          >
+            <!-- Options will be populated here -->
           </div>
         </div>
 
@@ -245,7 +249,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="mt-20 w-full">
+    <footer class="mt- w-full">
       <div
         class="w-full bg-textSecondary pt-12 pb-4 lg:px-20 px-4 flex flex-col gap-8"
       >
@@ -294,8 +298,8 @@
                   Layout, Bengaluru, Karnataka 560068, India
                 </p>
                 <!-- <p class="font-light text-white lg:text-md text-sm">
-                  (566) 237-4687
-                </p> -->
+                    (566) 237-4687
+                  </p> -->
                 <a
                   href="mailto:contact@propeasy.homes"
                   class="font-light text-white lg:text-md text-sm"
@@ -317,22 +321,78 @@
     </footer>
 
     <script>
-      // Fetch area data from JSON file
-      fetch("areas.json")
-        .then((response) => response.json())
-        .then((data) => {
-          const preferredAreasSelect =
-            document.getElementById("preferredAreas");
+      // Sample area data (you can replace this with a fetch call)
+      const areas = [
+        "Abbigere",
+        "Adugodi",
+        "Akshayanagar",
+        "Andrahalli",
+        "Anjanapura",
+        "Annapurneshwari Nagar",
+        "Arekere",
+        "Ashok Nagar",
+        "Attiguppe",
+        "Azad Nagar",
+        "BTM Layout",
+        "Bagalakunte",
+        "Banashankari",
+        "Banaswadi",
+        "Bannerghatta",
+        "Bannerghatta Road",
+        "Bapuji Nagar",
+        // Add more areas as needed
+      ];
 
-          // Populate select options
-          data.areas.forEach((area) => {
-            const option = document.createElement("option");
-            option.value = area;
-            option.textContent = area;
-            preferredAreasSelect.appendChild(option);
-          });
-        })
-        .catch((error) => console.error("Error fetching area data:", error));
+      // Sample capacity data
+      const capacities = [
+        "Room",
+        "Studio",
+        "1BHK",
+        "2BHK",
+        "3BHK",
+        "Penthouse",
+      ];
+
+      // Function to create checkbox options
+      function createCheckboxOptions(containerId, options) {
+        const container = document.getElementById(containerId);
+        container.innerHTML = ""; // Clear previous options
+        options.forEach((option) => {
+          const label = document.createElement("label");
+          label.className = "flex items-center";
+
+          const checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+          checkbox.value = option;
+          checkbox.className = "mr-2";
+
+          label.appendChild(checkbox);
+          label.appendChild(document.createTextNode(option));
+
+          container.appendChild(label);
+        });
+      }
+
+      // Populate Preferred Areas and Capacity with checkboxes
+      createCheckboxOptions("preferredAreasContent", areas);
+      createCheckboxOptions("capacityContent", capacities);
+
+      // Toggle dropdown visibility
+      document
+        .getElementById("preferredAreasDropdown")
+        .addEventListener("click", function () {
+          const content = document.getElementById("preferredAreasContent");
+          content.style.display =
+            content.style.display === "block" ? "none" : "block";
+        });
+
+      document
+        .getElementById("capacityDropdown")
+        .addEventListener("click", function () {
+          const content = document.getElementById("capacityContent");
+          content.style.display =
+            content.style.display === "block" ? "none" : "block";
+        });
 
       // Handle form submission
       document
@@ -343,13 +403,32 @@
           const minRent = document.getElementById("minRent").value;
           const maxRent = document.getElementById("maxRent").value;
 
+          // Get selected city
+          const city = document.getElementById("cities").value;
+
+          // Get selected preferred areas
+          const preferredAreas = Array.from(
+            document.querySelectorAll("#preferredAreasContent input:checked")
+          ).map((checkbox) => checkbox.value);
+
+          // Get selected capacity
+          const capacity = Array.from(
+            document.querySelectorAll("#capacityContent input:checked")
+          ).map((checkbox) => checkbox.value);
+
+          // Log the selections
+          console.log({
+            minRent,
+            maxRent,
+            city,
+            preferredAreas,
+            capacity,
+          });
+
           // Display message (You can replace this with an actual API call)
           const messageDiv = document.getElementById("message");
           messageDiv.textContent = "Preferences saved successfully!";
           messageDiv.style.color = "green";
-
-          // Here, you can send the data to your server using fetch or another method
-          console.log({ minRent, maxRent });
         });
 
       // Update labels based on slider values
