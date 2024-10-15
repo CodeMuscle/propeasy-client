@@ -80,6 +80,27 @@ html {
   animation-play-state: paused;
 }
 
+@keyframes slide {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes reverseslide {
+  from {
+    transform: translateX(0%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 1;
+  }
+}
+
 .logos-slide {
   display: inline-block;
   animation: 30s slide infinite linear;

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+    <link rel="icon" href="./assets/favicon.png" type="image/png" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./css/output.css" />
+
+    <!-- Icons - FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Custom Fonts - DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <title>User Property List</title>
+    <style>
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      #search-bar {
+        margin-bottom: 20px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+      }
+      .masked {
+        color: gray;
+      }
+      .interested {
+        background-color: lightgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex justify-between items-center">
+      <h1 id="name" class="text-2xl font-bold"></h1>
+      <div>
+        <button id="logoutBtn" class="bg-primary text-white rounded-lg px-4 py-2">
+          Logout</button
+        ><br /><br />
+        <button
+          id="onboardBtn"
+          class="bg-primary text-white rounded-lg px-4 py-2"
+        >
+          <a href="/onboard">Edit Preference</a></button
+        ><br /><br />
+        <span id="requested-count" class="text-lg">Contacts Requested: 3</span>
+      </div>
+    </div>
+    <br />
+    <table id="property-table" class="w-full border-collapse">
+      <thead class="">
+        <tr class="bg-primary text-white">
+          <th class="p-3 border border-primary">Discovered</th>
+          <th class="p-3 border border-primary">Availability</th>
+          <th class="p-3 border border-primary">Area</th>
+          <th class="p-3 border border-primary">Size</th>
+          <th class="p-3 border border-primary">Rent</th>
+          <th class="p-3 border border-primary">By</th>
+          <th class="p-3 border border-primary">Type</th>
+          <th class="p-3 border border-primary">Deposit</th>
+          <th class="p-3 border border-primary">Portion available</th>
+          <th class="p-3 border border-primary">Images</th>
+          <th class="p-3 border border-primary">Action</th>
+          <!-- <th class="p-3 border border-primary">Notes</th> -->
+        </tr>
+      </thead>
+      <tbody id="property-list" class="bg-blue-100 text-black align-top">
+        <!-- Dummy Data Row 1 -->
+        <tr>
+          <td class="p-3 border border-primary">Oct 12, 2024</td>
+          <td class="p-3 border border-primary">Available</td>
+          <td class="p-3 border border-primary">Downtown</td>
+          <td class="p-3 border border-primary">1200 sq ft</td>
+          <td class="p-3 border border-primary">$2000/month</td>
+          <td class="p-3 border border-primary">Owner</td>
+          <td class="p-3 border border-primary">Apartment</td>
+          <td class="p-3 border border-primary">$4000</td>
+          <td class="p-3 border border-primary">100%</td>
+          <!-- <td class="p-3 border border-primary">
+            <a href="#"><img src="https://d2vcelvjdj7n25.cloudfront.net/media/property_photos/image_640x960/13879959/1_mob_thumbnail.jpeg" alt="property-image" class="rounded" /></a>
+          </td> -->
+          <td class="p-3 border border-primary">
+            <button class="bg-blue-900 text-white rounded px-3 py-1">Request Info</button>
+          </td>
+          <td class="p-3 border border-primary">Great location near parks.</td>
+        </tr>
+        <!-- Dummy Data Row 2 -->
+        <tr>
+          <td class="p-3 border border-primary">Oct 10, 2024</td>
+          <td class="p-3 border border-primary">Occupied</td>
+          <td class="p-3 border border-primary">Suburbs</td>
+          <td class="p-3 border border-primary">1500 sq ft</td>
+          <td class="p-3 border border-primary">$2500/month</td>
+          <td class="p-3 border border-primary">Agent</td>
+          <td class="p-3 border border-primary">House</td>
+          <td class="p-3 border border-primary">$5000</td>
+          <td class="p-3 border border-primary">50%</td>
+          <!-- <td class="p-3 border border-primary">
+            <a href="#"><img src="https://i2.au.reastatic.net/800x600/e80b51a5f6bd7021ecebc51cb3ca9007317f98e83c6539476d8e3e4487e20b3c/image.jpg" alt="property-image" class="rounded" /></a>
+          </td> -->
+          <td class="p-3 border border-primary">
+            <button class="bg-blue-900 text-white rounded px-3 py-1">Request Info</button>
+          </td>
+          <td class="p-3 border border-primary">Spacious garden.</td>
+        </tr>
+        <!-- Dummy Data Row 3 -->
+        <tr>
+          <td class="p-3 border border-primary">Oct 8, 2024</td>
+          <td class="p-3 border border-primary">Available</td>
+          <td class="p-3 border border-primary">City Center</td>
+          <td class="p-3 border border-primary">800 sq ft</td>
+          <td class="p-3 border border-primary">$1800/month</td>
+          <td class="p-3 border border-primary">Owner</td>
+          <td class="p-3 border border-primary">Condo</td>
+          <td class="p-3 border border-primary">$3600</td>
+          <td class="p-3 border border-primary">80%</td>
+          <!-- <td class="p-3 border border-primary">
+            <a href="#"><img src="https://assets.savills.com/properties/IN3101054768/4478f2e7898e45a793a5cd3c8f41b2cb-wtm_l_lis.jpg" alt="property-image" class="rounded" /></a>
+          </td> -->
+          <td class="p-3 border border-primary">
+            <button class="bg-blue-900 text-white rounded px-3 py-1">Request Info</button>
+          </td>
+          <td class="p-3 border border-primary">Includes parking space.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div id="pagination" class="pt-4">
+      <button
+        onclick="loadProperties(currentPage - 1)"
+        id="prevPage"
+        class="bg-primary text-white rounded px-4 py-2 mr-2"
+        disabled
+      >
+        Previous
+      </button>
+      <span id="page-info" class="text-lg"></span>
+      <button
+        onclick="loadProperties(currentPage + 1)"
+        id="nextPage"
+        class="bg-primary text-white rounded px-4 py-2 ml-2"
+      >
+        Next
+      </button>
+    </div>
+
+    <script>
+      const BASE_URL = window.location.origin
+      let currentPage = 1
+      let searchTerm = ''
+      const pageSize = 50 // Number of properties per page
+
+      const username = window.location.href.split(BASE_URL + "/")[1]
+      let properties = []
+      let requestedCount = 0
+      let userData
+
+      // Fetch user-specific data and properties
+               async function loadProperties(page = 1) {
+                   currentPage = page;
+                   try {
+                       // Fetch user data
+                       const userResponse = {... user ...}
+                       if (!userResponse.ok) {
+                           const errorText = await userResponse.text();
+                           console.error('Error fetching user data:', errorText);
+                           throw new Error('User data fetch failed');
+                       }
+                       userData = await userResponse.json();
+                       console.log(userData)
+                       requestedCount = userData?.requestedCount;
+                       document.getElementById('requested-count').textContent = `Requested Properties: ${requestedCount}`;
+                       document.getElementById('name').textContent = `${userData.username}`;
+      		document.title = `${userData.username}'s Properties`;
+
+      		// Get user's area preferences
+      		const areas = userData.areaPreferences ? userData.areaPreferences.join(',') : '';
+
+      		// Fetch properties with pagination and area preferences
+      		const propertiesResponse = {... Array of Properties ...}
+      		if (!propertiesResponse.ok) {
+                           throw new Error('Properties fetch failed');
+                       }
+                       const data = await propertiesResponse.json();
+                       properties = data.properties;
+                       totalPages = Math.ceil(data.total / pageSize)
+
+                       // Populate the table
+                       populateTable(properties);
+                   } catch (err) {
+                       console.error('Error:', err);
+                   }
+               }
+
+      function populateTable(properties) {
+      	const propertyList = document.getElementById('property-list')
+      	propertyList.innerHTML = ''
+
+      	properties.forEach(property => {
+      		const row = document.createElement('tr')
+      		row.id = `property-${property._id}`
+      		// if it's a property discarded by the user
+                       if (userData && userData?.discardedProperties?.includes(property._id)) {
+      			return
+      		}
+      		// if it's an invalid property
+      		if (!property.property_type && !property.rent && !property.deposit) {
+      			return
+      		}
+      		if (userData && userData?.requestedContacts?.includes(property._id)) {
+      			row.classList.add('interested')
+      		}
+
+      		row.innerHTML = `
+                           <td>${property.saveDate ? new Date(property.saveDate).toLocaleDateString('en-GB') : ''}</td>
+                           <td>${property.available_from ? new Date(property.available_from).toLocaleDateString('en-GB') : ''}</td>
+                           <td style="max-width: 100px">${property.area || ''}<br><br><span style="color: gray"><i>${property.location || ''}</i></span></td>
+                           <td>${property.property_type || ''}</td>
+                           <td>${property.rent || ''}</td>
+                           <td>${property.brokerage ? 'broker' : 'owner'}</td>
+                           <td style="max-width: 100px" class="amenities-cell">
+      				<div class="amenities-content" id="amenities-${property._id}" data-full-amenities="${property.amenities.join(', ').toLowerCase()}" data-truncated-amenities="${property.amenities.slice(0, 6).join(', ').toLowerCase()}">
+      					${property.amenities.slice(0, 6).join(', ').toLowerCase()}${property.amenities.length > 6 ? '... ' : ''}
+      					${property.amenities.length > 6 ? `<button onclick="toggleAmenities('${property._id}')">+</button>` : ''}
+      				</div>
+      			</td>
+                           <td>${property.deposit || ''}</td>
+      			<td style="max-width: 10px">${property.partial ? 'partial' : 'full'}</td>
+      			<td style="max-width: 10px">${property.images?.map(link => `<a href="${link}" target="_blank">link</a>`).join('\n')}</td>
+      			<td class="button-cell" style="max-width: 50px">
+      				${userData && userData.requestedContacts.includes(property._id)
+      					? `<span>${property.verifiedContact ?? 'Contact Requested'}</span>`
+      					: `<button style='background-color: lightgreen' onclick="requestContact('${property._id}')">Request ${['mr.mohammed', 'mr.rizwan'].includes(username) ? "Contact" : "Visit" }</button><br><br><button style='background-color: #FFCCCB' onclick="discard('${property._id}')">Remove property</button>`
+      				}
+      			</td>
+                           <td>
+                               <textarea id="note-${property._id}">${
+       	                        userData.notes.find(note => note.propertyId === property._id)?.content ?? ''
+      				}</textarea><br><br>
+      				<button onclick="updateNotes('${property._id}')">Save Note</button>
+      			</td>
+                       `
+      		propertyList.appendChild(row)
+
+                       // Handle pagination controls
+                       document.getElementById('prevPage').disabled = currentPage === 1;
+                       document.getElementById('nextPage').disabled = currentPage === totalPages;
+                       document.getElementById('page-info').textContent = `Page ${currentPage} of ${totalPages}`;
+      	})
+      }
+
+      async function updateNotes(propertyId) {
+      	const noteContent = document.getElementById(`note-${propertyId}`).value
+      	if (!noteContent) return // Ignore empty notes
+
+      	try {
+      		await fetch(`${BASE_URL}/user/${username}/notes`, {
+      			method: 'PUT',
+      			headers: { 'Content-Type': 'application/json' },
+      			body: JSON.stringify({ propertyId, content: noteContent }),
+      			credentials: 'include', // include cookies
+      		})
+      		alert('Note updated successfully')
+      	} catch (err) {
+      		console.error('Failed to update note:', err)
+      	}
+      }
+
+      async function requestContact(propertyId) {
+      	try {
+      		await fetch(`${BASE_URL}/user/${username}/request`, {
+      			method: 'POST',
+      			headers: { 'Content-Type': 'application/json' },
+      			body: JSON.stringify({ propertyId }),
+      			credentials: 'include', // include cookies
+      		})
+      		requestedCount++
+      		document.getElementById(`property-${propertyId}`).style.backgroundColor = 'lightgreen'
+      		document.getElementById(
+      			'requested-count'
+      		).textContent = `Requested Properties: ${requestedCount}`
+
+      		// Find the button that was clicked and update it to "Contact Requested"
+      		const buttonCell = document.querySelector(`#property-${propertyId} .button-cell`);
+      		buttonCell.innerHTML = '<span>Contact Requested</span>';
+      	} catch (err) {
+      		console.error('Failed to request contact:', err)
+      	}
+      }
+
+      function markInterest(propertyId) {
+      	const row = document.getElementById(`property-${propertyId}`)
+      	row.classList.add('interested')
+      }
+
+      async function discard(propertyId) {
+      	try {
+      		const response = await fetch(`${BASE_URL}/user/${username}/discard`, {
+      			method: 'POST',
+      			headers: {
+      				'Content-Type': 'application/json',
+      			},
+      			body: JSON.stringify({ propertyId }),
+      			credentials: 'include', // include cookies
+      		})
+
+      		// Check if the response is not empty
+      		if (!response.ok) {
+      			throw new Error(`HTTP error! Status: ${response.status}`)
+      		}
+
+      		const data = await response.json()
+
+      		if (data.success) {
+      			// Remove the row from the DOM if the server update was successful
+      			const row = document.getElementById(`property-${propertyId}`)
+      			if (row) {
+      				row.remove()
+      			}
+      		} else {
+      			console.error('Failed to discard property on the server')
+      		}
+      	} catch (err) {
+      		console.error('Error discarding property:', err)
+      	}
+      }
+
+      function toggleAmenities(propertyId) {
+      	const amenitiesDiv = document.getElementById(`amenities-${propertyId}`);
+      	const button = amenitiesDiv.querySelector('button');
+
+      	if (button.textContent === '+') {
+      		amenitiesDiv.innerHTML = amenitiesDiv.dataset.fullAmenities + ' <button onclick="toggleAmenities(\'' + propertyId + '\')">-</button>';
+      	} else {
+      		amenitiesDiv.innerHTML = amenitiesDiv.dataset.truncatedAmenities + '... <button onclick="toggleAmenities(\'' + propertyId + '\')">+</button>';
+      	}
+      }
+
+      document.getElementById('logoutBtn').addEventListener('click', () => {
+      	fetch('/logout', {
+      		method: 'POST',
+      		credentials: 'include', // Include credentials for session management
+      	})
+      	.then(response => {
+      		console.log(response)
+      		if (response.redirected) {
+      			window.location.href = response.url; // Redirect to the correct page
+      		}
+      	})
+      	.catch(error => console.error('Error during logout:', error));
+      });
+
+               if (['/mr.mohammed', '/mr.rizwan'].includes(window.location.pathname)) {
+                   //hide the logout button for current brokers:
+                   document.getElementById('logoutBtn').style.display = 'none';
+                   document.getElementById('onboardBtn').style.display = 'none';
+               }
+
+      // Load properties on page load
+      window.onload = loadProperties(1)
+    </script>
+  </body>
+</html>
